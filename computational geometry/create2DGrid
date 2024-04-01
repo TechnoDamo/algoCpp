@@ -1,0 +1,35 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+/**
+ * this function is intended to create a vector, which represents a 2 dimensional grid (cartesian coordinate system);
+ * m parameter stays for max X ans Y value;
+ * quoterAmount stays for amount of quoters in a graph, if quoterAmount != 1 && != 2 => it equals 4;
+ * */
+vector<vector<int>> create2DGrid(int m, int quoterAmount) {
+    vector<int> v;
+    vector<vector<int>> V;
+    if (quoterAmount == 1) {
+        v.resize(m+1, 0);
+        V.resize(m+1, v);
+    }
+    else if (quoterAmount == 2) {
+        v.resize(2*m+1, 0);
+        V.resize(m+1, v);
+    }
+    else {
+        v.resize(2*m+1, 0);
+        V.resize(2*m+1, v);
+    }
+    return V;
+};
+
+int main() {
+    int m, quoterAmount;
+    cin >> m >> quoterAmount;
+    vector<int> v;
+    vector<vector<int>> V;
+    V = create2DGrid(m, quoterAmount);
+
+    return 0;
+}
